@@ -18,6 +18,8 @@ import {
 } from 'reactstrap';
 
 export const ContactUs = () => {
+  const [msg,setMsg]= useState('')
+  const [name,setName]= useState('')
   const form = useRef<HTMLFormElement>(null);
   const [alert, setAlert] = useState<{
     color: string;
@@ -41,7 +43,7 @@ export const ContactUs = () => {
     e.preventDefault();
     console.log('submitting');
 
-    console.log(form.current);
+    console.log(name);
 
     const emailJsServiceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 
@@ -56,10 +58,10 @@ export const ContactUs = () => {
       form.current
     ) {
       emailjs
-        .sendForm(
+        .send(
           emailJsServiceId,
           emailJsTemplateId,
-          form.current,
+         {from_name:name,message:msg},
           emailJsPublicKey
         )
         .then(
@@ -106,6 +108,9 @@ export const ContactUs = () => {
                           placeholder="Your name"
                           type="text"
                           name="user_name"
+                          value={name}
+                          onChange={(e)=>setName(e.target.value)}
+            
                         />
                       </InputGroup>
                     </FormGroup>
@@ -125,6 +130,10 @@ export const ContactUs = () => {
                     </FormGroup>
                     <FormGroup className="mb-4">
                       <Input
+                      value={msg}
+                      onChange={(ev)=>{
+                        setMsg(ev.target.value);
+                      }}
                         className="form-control-alternative"
                         cols="80"
                         name="user_message"

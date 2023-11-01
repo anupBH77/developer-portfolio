@@ -16,7 +16,7 @@ export type SocialLinksType = {
 // * HERO SECTION
 
 export type GreetingsType = {
-  name: string;
+
   title: string;
   description?: string;
   resumeLink?: string;
@@ -55,9 +55,7 @@ export type EducationType = {
   schoolName: string;
   subHeader: string;
   duration: string;
-  desc: string;
-  grade?: string;
-  descBullets?: string[];
+ 
 };
 
 // * EXPERIENCE SECTION
