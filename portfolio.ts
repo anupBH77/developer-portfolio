@@ -16,7 +16,7 @@ export const greetings: GreetingsType = {
   title: "Hi all, I'm Anup Bhaumik",
   description:
     "I'm passionate Full Stack web developer having personal project based experience of web applications with  React.js, Next.js, Node.js,MongoDB with orm and odm liberaries like prisma and mongoose.",
-  resumeLink:'https://docs.google.com/document/d/1bUyizHrlmGFDCsITuWyoEyvjkugr_tJ92djFCQ5Gvs0/edit',
+  resumeLink:'https://drive.google.com/file/d/1PDu99EbZHr1t1N5Nn9V4NFYjnIWoihhU/view?usp=sharing',
 };
 
 export const openSource = {
